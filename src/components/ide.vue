@@ -10,10 +10,11 @@
     </select>
     </div>
      
-    <div data-pym-src="https://www.jdoodle.com/embed/v0/36IZ?rw=1&arg=0" v-show="selected==='cpp'" id="cpp"></div>
-    <div data-pym-src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java"></div>
-    <div data-pym-src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python"></div>
+    <iframe src="https://www.jdoodle.com/embed/v0/36IZ?rw=1&arg=0" v-show="selected==='cpp'" id="cpp" class="iframe-div"></iframe>
+    <iframe src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java" class="iframe-div"></iframe>
+    <iframe src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python" class="iframe-div"></iframe>
     </div>
+    <a href="#">Submit</a>
  
 </div>
    
@@ -38,6 +39,11 @@ export default {
 
     //  document.querySelector("#app > div > div > div > div.embed-brand-area.level").innerText="";
     });
+  },
+  mounted(){
+         var frameobj=document.getElementById("#cpp");
+     var frameContent= frameobj.contentWindow.document.body.innerHTML;
+      alert(frameContent);
   }
 }
 </script>
@@ -68,5 +74,8 @@ export default {
   margin-top: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.iframe-div{
+  height:80vh;
+  width:100%;
+}
 </style>
