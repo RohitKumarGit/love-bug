@@ -10,12 +10,60 @@
         <b-row class="my-row" sm="1" md="2" lg="2">
     <b-col cols="6">
     <div @click="convert" class="my-div scrollbar" id="style-3">
-        <b-dropdown id="dropdown-left" text="Choose problem" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Detect cycle in graph</b-dropdown-item>
-    <b-dropdown-item href="#">0/1 knapsack</b-dropdown-item>
-    <b-dropdown-item href="#">Matrix chain multiplication</b-dropdown-item>
-  </b-dropdown>
-     <p v-html="text"></p>
+         <select name="" id="lang" v-model="selected" required>
+        <option value="first" selected>Detect cycle in undirected graph</option>
+        <option value="second">0/1 knapsack</option>
+        <option value="third">Matrix chain multiplication</option>
+    </select>
+     <p v-if="selected=='first'">
+         <pre>
+        Given an undirected graph, how to check if there is a cycle in the graph? 
+Example, 
+
+Input: n = 4, e = 4 
+Output: Yes 
+Explanation: 
+0 1, 1 2, 2 3, 0 2 
+         </pre>
+     </p>
+     <p v-if="selected=='second'">
+         <pre>
+Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. In other words, given two integer arrays val[0..n-1] and wt[0..n-1] which represent values and weights associated with n items respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that sum of the weights of this subset is smaller than or equal to W. You cannot break an item, either pick the complete item or don’t pick it (0-1 property).
+         </pre>
+     </p>
+     <p v-if="selected=='third'">
+         <pre>
+Given a sequence of matrices, find the most efficient way to multiply these matrices together. The problem is not actually to perform the multiplications, but merely to decide in which order to perform the multiplications.
+We have many options to multiply a chain of matrices because matrix multiplication is associative. In other words, no matter how we parenthesize the product, the result will be the same. For example, if we had four matrices A, B, C, and D, we would have: 
+
+(ABC)D = (AB)(CD) = A(BCD) = ....
+However, the order in which we parenthesize the product affects the number of simple arithmetic operations needed to compute the product, or the efficiency. For example, suppose A is a 10 × 30 matrix, B is a 30 × 5 matrix, and C is a 5 × 60 matrix. Then,  
+
+(AB)C = (10×30×5) + (10×5×60) = 1500 + 3000 = 4500 operations
+A(BC) = (30×5×60) + (10×30×60) = 9000 + 18000 = 27000 operations.
+Clearly the first parenthesization requires less number of operations.
+Given an array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i]. We need to write a function MatrixChainOrder() that should return the minimum number of multiplications needed to multiply the chain. 
+
+Input: p[] = {40, 20, 30, 10, 30}   
+Output: 26000  
+There are 4 matrices of dimensions 40x20, 20x30, 30x10 and 10x30.
+Let the input 4 matrices be A, B, C and D.  The minimum number of 
+multiplications are obtained by putting parenthesis in following way
+(A(BC))D --> 20*30*10 + 40*20*10 + 40*10*30
+
+Input: p[] = {10, 20, 30, 40, 30} 
+Output: 30000 
+There are 4 matrices of dimensions 10x20, 20x30, 30x40 and 40x30. 
+Let the input 4 matrices be A, B, C and D.  The minimum number of 
+multiplications are obtained by putting parenthesis in following way
+((AB)C)D --> 10*20*30 + 10*30*40 + 10*40*30
+
+Input: p[] = {10, 20, 30}  
+Output: 6000  
+There are only two matrices of dimensions 10x20 and 20x30. So there 
+is only one way to multiply the matrices, cost of which is 10*20*30
+         </pre>
+     </p>
     </div>
     </b-col>
     <b-col cols="6">
@@ -43,9 +91,9 @@ export default({
     name:"running",
     data(){
         return{
-            text:"<p>The&nbsp;computer science teacher who has been teaching Johnny for many years has a big difficulty with source codes which she has to check. It is very hard for her to evaluate manually all those source codes in order to find real or imaginary similarities. Therefore she asked her the most talented pupil Johnny for help. After some analysis Johnny came to the conclusion that the first task is to remove form the source codes numerous comments which are irrelevant from the viewpoint of the evaluation of the codes similarities.</p>\r\n\r\n<p>Comments in source codes written in C/C++ have two possible forms:</p>\r\n\r\n<pre>\r\n/* this is comment\r\n       this is still comment */\r\nor \r\n          // this is comment till the end of the line\r\n</pre>\r\n\r\n<p>Johnny&rsquo;s task is to write a program which will remove all comments from the correct source code (no larger than 50 kB) given as an input and written in C/C++. The rest of the source code should be print out without any changes.</p>\r\n\r\n<h3>Example 1</h3>\r\n\r\n<p><strong>Input:</strong></p>\r\n\r\n<table align=\"center\" border=\"0\" cellspacing=\"2\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:#ffffff\">\r\n\t\t\t<pre>\r\n#define R(p) rand()%(&#39;9&#39;-(p)+1)+(p) // makrodefinition\r\n#define P(p) putc((p),stdout)\r\n#define PP(p) P(R(p)) // nested makrodefinition\r\n\r\n#include &lt;iostream&gt;\r\n#include &lt;cstdlib&gt;\r\n\r\n#include &lt;cstdio&gt;\r\n\r\nusing namespace std;\r\n\r\n/* function generating number sequence */\r\nvoid gen(int x) \r\n{\r\n\tif (x) PP(&#39;1&#39;); else PP(&#39;0&#39;);\r\n\tfor(;x;x--) PP(&#39;0&#39;);\r\n}\r\n\r\nint main()\r\n{\r\n\tint a, d, n;\r\n\tcin &gt;&gt; a; srand(a); /* generator init\r\n        liczb pseudolosowych /* */\r\n\tcin &gt;&gt; d; cin &gt;&gt; n; cout &lt;&lt; n &lt;&lt; endl;\r\n\tfor(;n;n--)\r\n\t{\r\n\t\tgen(rand()%d);  P(&#39; &#39;);\r\n\t\tgen(rand()%d);  P(&#39;\\n&#39;);\r\n\t}\r\n\treturn 0;\r\n}</pre>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p><strong>Output:</strong></p>\r\n\r\n<table align=\"center\" border=\"0\" cellspacing=\"2\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:#ffffff\">\r\n\t\t\t<pre>\r\n#define R(p) rand()%(&#39;9&#39;-(p)+1)+(p)\r\n#define P(p) putc((p),stdout)\r\n#define PP(p) P(R(p))\r\n\r\n#include &lt;iostream&gt;\r\n#include &lt;cstdlib&gt;\r\n\r\n#include &lt;cstdio&gt;\r\n\r\nusing namespace std;\r\n\r\n\r\nvoid gen(int x)\r\n{\r\n        if (x) PP(&#39;1&#39;); else PP(&#39;0&#39;);\r\n        for(;x;x--) PP(&#39;0&#39;);\r\n}\r\n\r\nint main()\r\n{\r\n        int a, d, n;\r\n        cin &gt;&gt; a; srand(a);\r\n        cin &gt;&gt; d; cin &gt;&gt; n; cout &lt;&lt; n &lt;&lt; endl;\r\n        for(;n;n--)\r\n        {\r\n                gen(rand()%d);  P(&#39; &#39;);\r\n                gen(rand()%d);  P(&#39;\\n&#39;);\r\n        }\r\n        return 0;\r\n}\r\n</pre>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<h3>Example 2</h3>\r\n\r\n<p><strong>Input:</strong></p>\r\n\r\n<table align=\"center\" border=\"0\" cellspacing=\"2\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:#ffffff\">\r\n\t\t\t<pre>\r\n#include &lt;stdio.h&gt;\r\n#include &lt;stdlib.h&gt;\r\n\r\ntypedef struct _road{\r\n    int cost;//,Id;\r\n    int from,to;\r\n    struct _road *next;\r\n}road;\r\n\r\nint readInt(void);\r\ninline int roadcmp(const void *a,const void *b){\r\n    return ((road*)a)-&gt;cost-((road*)b)-&gt;cost;\r\n};\r\n\r\ninline void swap(road *a,road *b){\r\n/* swap two variables */\r\n    road tmp=*a;\r\n    *a=*b;\r\n    *b=tmp;\r\n};\r\n/* Heapify, BuildHeap, HeapSort - sorting functions using \r\n    the order defined by function compare\r\n    should be executed by HeapSort */\r\nvoid Heapify(road *A,int n, int i);\r\nvoid BuildHeap(road *A,int n);\r\nvoid HeapSort(road *A,int n);\r\n\r\nint city[10000]; // is it in tree\r\nint main(){} /* this is the end...*/</pre>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p><strong>Output:</strong></p>\r\n\r\n<table align=\"center\" border=\"0\" cellspacing=\"2\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:#ffffff\">\r\n\t\t\t<pre>\r\n#include &lt;stdio.h&gt;\r\n#include &lt;stdlib.h&gt;\r\n\r\ntypedef struct _road{\r\n    int cost;\r\n    int from,to;\r\n    struct _road *next;\r\n}road;\r\n\r\nint readInt(void);\r\ninline int roadcmp(const void *a,const void *b){\r\n    return ((road*)a)-&gt;cost-((road*)b)-&gt;cost;\r\n};\r\n\r\ninline void swap(road *a,road *b){\r\n\r\n    road tmp=*a;\r\n    *a=*b;\r\n    *b=tmp;\r\n};\r\n\r\nvoid Heapify(road *A,int n, int i);\r\nvoid BuildHeap(road *A,int n);\r\nvoid HeapSort(road *A,int n);\r\n\r\nint city[10000];\r\nint main(){}\r\n</pre>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
             toggle:false,
             verifyaddress:true,
+            selected:"",
             
         }
     },
@@ -104,5 +152,8 @@ export default({
 .basicapi-container{
     margin:0.5rem;
     
+}
+pre{
+    white-space: pre-wrap;
 }
 </style>
