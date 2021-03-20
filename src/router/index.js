@@ -6,6 +6,7 @@ import contests from'../components/contests.vue'
 import matches from'../components/matches.vue'
 import practice from'../components/practice.vue'
 import IDE from'../components/ide.vue'
+import help from'../components/help.vue'
 
 Vue.use(VueRouter);
 
@@ -33,7 +34,12 @@ const routes=[
     {
         path:'/practice',
         component:practice
+    },
+    {
+        path:'/help',
+        component:help
     }
+
 ];
 
 const router = new VueRouter({
