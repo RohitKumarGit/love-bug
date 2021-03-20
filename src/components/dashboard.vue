@@ -46,7 +46,7 @@
     </b-row>
     </b-container>
     <div class="registered-contests scrollbar" id="style-3">
-    <h3 class="headings running">RUNNING CONTESTS</h3>
+    <h3 class="headings running">REGISTERED CONTESTS</h3>
     <table>
   <thead>
     <tr>
