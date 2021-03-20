@@ -22,7 +22,7 @@
             </div>
         </b-col>
         <b-col class="live-location">
-            <h1 class="headings">LIVE LOCATION</h1>
+            <h3 class="headings liveloc">LIVE LOCATION</h3>
             <p>EST. ADDRESS : {{printaddr}}</p>
            <GmapMap
   :center="{lat:this.coordinates.lat, lng:this.coordinates.lng}"
@@ -44,8 +44,50 @@
         </b-col>
     </b-row>
     </b-container>
-    <div class="registered-contests">
-    <h1 class="headings">RUNNING CONTESTS</h1>
+    <div class="registered-contests scrollbar" id="style-3">
+    <h3 class="headings running">RUNNING CONTESTS</h3>
+    <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-column="First Name">James</td>
+      <td data-column="Last Name">Matman</td>
+      <td data-column="Job Title">Chief Sandwich Eater</td>
+      <td data-column="Twitter">@james</td>
+    </tr>
+    <tr>
+      <td data-column="First Name">Andor</td>
+      <td data-column="Last Name">Nagy</td>
+      <td data-column="Job Title">Designer</td>
+      <td data-column="Twitter">@andornagy</td>
+    </tr>
+    <tr>
+      <td data-column="First Name">Tamas</td>
+      <td data-column="Last Name">Biro</td>
+      <td data-column="Job Title">Game Tester</td>
+      <td data-column="Twitter">@tamas</td>
+    </tr>
+    <tr>
+      <td data-column="First Name">Zoli</td>
+      <td data-column="Last Name">Mastah</td>
+      <td data-column="Job Title">Developer</td>
+      <td data-column="Twitter">@zoli</td>
+    </tr>
+    <tr>
+      <td data-column="First Name">Szabi</td>
+      <td data-column="Last Name">Nagy</td>
+      <td data-column="Job Title">Chief Sandwich Eater</td>
+      <td data-column="Twitter">@szabi</td>
+    </tr>
+  </tbody>
+</table>
     </div>
     
 </div>
@@ -133,7 +175,9 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     width:100vw;
 }
 .headings{
-    font-size:2rem;
+    font-size:1.5rem;
+    font-weight: 550;
+    color:indigo;
 }
 .about-icon{
     font-size:4rem;
@@ -251,5 +295,60 @@ body {
     transition-delay: 0.6s;
     opacity: 1;
   }
+}
+.liveloc{
+     margin-top:1rem;
+}
+#style-3::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+.scrollbar
+{
+  max-height: 20rem;
+	background: #F5F5F5;
+	overflow-y: scroll;
+  margin-top: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #4a47a3; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+.running{
+  margin-top:1rem;
+  font-size:2rem;
+  font-weight: 600;
 }
 </style>

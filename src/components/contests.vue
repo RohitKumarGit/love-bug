@@ -1,5 +1,7 @@
 <template>
-<div class="contests-container scrollbar" id="style-3">
+<b-tabs content-class="mt-3" class="my-tabs">
+    <b-tab title="Explore" active>
+      <div class="contests-container scrollbar" id="style-3">
     <b-container>
         <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
             <b-col>
@@ -339,8 +341,24 @@
     </b-container>
    
 </div>
+    </b-tab>
+    <b-tab title="Running">
+      <basicapi/>
+    </b-tab>
+  </b-tabs>
+
     
 </template>
+<script>
+import basicapi from './basicapi.vue'
+
+export default({
+ components:{
+   basicapi
+ }
+})
+</script>
+
 <style scoped>
 #style-3::-webkit-scrollbar-track
 {
@@ -361,7 +379,7 @@
 .scrollbar
 {
   margin:0 auto;
-  max-height: 91vh;
+  max-height: 85vh;
   max-width: 100vw;
 	background: #F5F5F5;
 	overflow-y: scroll;
@@ -370,5 +388,8 @@
 }
 .contests-row{
     margin-top:2rem;
+}
+.my-tabs{
+  overflow:hidden;
 }
 </style>
