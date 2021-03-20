@@ -9,15 +9,14 @@
           <i class="far fa-bell"></i>
         </a>
         <div class="top-right-div">
-                 <div class="dropdown">
-  <button type="button" class="btn dropdown-toggle btn-primary navbar-button" data-toggle="dropdown">
-  <i class="fas fa-user"></i>
-  </button>
-  <div class="dropdown-menu">
-    <router-link class="dropdown-item u-made-small" to="./edit">Edit Password</router-link>
-    <button>Sign Out</button>
-  </div>
-</div>
+<b-dropdown id="dropdown-dropleft" dropleft variant="primary" class="m-2" no-caret>
+   <template #button-content>
+      <i class="fas fa-user"></i>
+    </template>
+    <b-dropdown-item href="#">Edit profile</b-dropdown-item>
+    <b-dropdown-item href="#">Logout</b-dropdown-item>
+  </b-dropdown>
+  
         </div>
        
         
@@ -183,7 +182,7 @@ h4{
 .top-right-div{
   margin:0 auto;
   position: absolute;
-  top:0.2rem;
+  top:-0.2rem;
   right:0;
 }
 .dropdown{
