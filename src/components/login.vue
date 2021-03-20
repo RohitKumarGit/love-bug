@@ -2,7 +2,7 @@
     <div class="login-container">
       <div class="login-div">
           <img src="../assets/login.jpg" alt="" class="my-photo">
-          <b-button variant="primary" @click="login">LOGIN</b-button>
+          <b-button variant="primary" @click="login" class="login-button">LOGIN</b-button>
            <!-- <a href="#" class="testbutton"><i class="fab fa-google"></i>&nbsp;&nbsp;&nbsp;Sign-in with Google</a> -->
       </div>
      
@@ -43,7 +43,7 @@ export default({
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    height:30rem;
+    height:28rem;
     width: 30rem;
     background-color:white;
     border-radius: 3px;
@@ -73,5 +73,9 @@ export default({
     width: 100%;
     border-radius: 5px;
     border:solid 1px black;
+}
+.login-button{
+  display: block;
+  margin: 1rem auto;
 }
 </style>

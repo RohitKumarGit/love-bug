@@ -39,7 +39,7 @@
       </div> -->
        <img src="../assets/people.jpg" alt="" class="my-photo">
         <h4>Hello Mayank!</h4>
-        <div class="side-links d-flex"><router-link to="./" class="link">&nbsp;&nbsp;Dashboard</router-link><span><i class="fas fa-tachometer-alt"></i></span></div>
+        <div class="side-links d-flex"><router-link to="./dashboard" class="link">&nbsp;&nbsp;Dashboard</router-link><span><i class="fas fa-tachometer-alt"></i></span></div>
         <div class="side-links d-flex"><router-link to="./contests" class="link">&nbsp;&nbsp;Contests</router-link><span><i class="fas fa-compass"></i></span></div>
         <div class="side-links d-flex"><router-link to="./matches" class="link">&nbsp;&nbsp;Matches</router-link><span>&nbsp;<i class="fas fa-people-arrows"></i></span></div>
         <div class="side-links d-flex"><router-link to="./practice" class="link">&nbsp;&nbsp;Practice</router-link><span>&nbsp;<i class="fas fa-pencil-ruler"></i></span></div>

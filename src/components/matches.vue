@@ -2,9 +2,9 @@
     <div class="matches-container scrollbar" id="style-3">
       <b-container>
           <b-row cols="1" cols-sm="1" cols-md="2" cols-lg="4">
-              <b-col>
+              <b-col v-for="match in matches" :key="match._id">
                     <b-card
-    title="Card Title"
+    :title=match.name
     img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
     img-alt="Image"
     img-top
@@ -13,194 +13,8 @@
     class="mb-2"
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-                <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-                <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Chat with him/her</b-button>
-  </b-card>
-              </b-col>
-               <b-col>
-                    <b-card
-    title="Card Title"
-    img-src="https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/beautiful-blur-blurred-background-733872.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+      Email : {{match.email}}<br/>
+      Phone number : {{match.phone}}
     </b-card-text>
 
     <b-button href="#" variant="primary">Chat with him/her</b-button>
@@ -211,6 +25,17 @@
       </b-container>
     </div>
 </template>
+<script>
+
+export default({
+  data() {
+    return{
+      matches:{}
+    }
+  },
+})
+</script>
+
 <style scoped>
 .matches-container{
     padding:2rem;
@@ -248,7 +73,8 @@
 export default {
    created(){
    //  const matches = this.$store.state.user
-    console.log("matches array :",this.$store.state.user.matches)
+    console.log("matches array :",this.$store.state.user.matches);
+    this.matches=this.$store.state.user.matches;
   },
   computed:{
   

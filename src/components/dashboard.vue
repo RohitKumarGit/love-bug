@@ -7,7 +7,7 @@
   <div class="overlay">
     <div class = "items"></div>
     <div class = "items head">
-      <p>HEY MAYANK</p>
+      <p>HEY {{name}}</p>
       <hr>
     </div>
     <div class = "items price">
@@ -53,39 +53,15 @@
       <th>Name</th>
       <th>Start</th>
       <th>End</th>
-      <th>Status</th>
+      <th>No of participants</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td data-column="First Name">James</td>
-      <td data-column="Last Name">Matman</td>
-      <td data-column="Job Title">Chief Sandwich Eater</td>
-      <td data-column="Twitter">@james</td>
-    </tr>
-    <tr>
-      <td data-column="First Name">Andor</td>
-      <td data-column="Last Name">Nagy</td>
-      <td data-column="Job Title">Designer</td>
-      <td data-column="Twitter">@andornagy</td>
-    </tr>
-    <tr>
-      <td data-column="First Name">Tamas</td>
-      <td data-column="Last Name">Biro</td>
-      <td data-column="Job Title">Game Tester</td>
-      <td data-column="Twitter">@tamas</td>
-    </tr>
-    <tr>
-      <td data-column="First Name">Zoli</td>
-      <td data-column="Last Name">Mastah</td>
-      <td data-column="Job Title">Developer</td>
-      <td data-column="Twitter">@zoli</td>
-    </tr>
-    <tr>
-      <td data-column="First Name">Szabi</td>
-      <td data-column="Last Name">Nagy</td>
-      <td data-column="Job Title">Chief Sandwich Eater</td>
-      <td data-column="Twitter">@szabi</td>
+    <tr v-for="contest in contests" :key="contest._id">
+      <td data-column="">{{contest.name}}</td>
+      <td data-column="">{{contest.start_time}}</td>
+      <td data-column="">{{contest.end_time}}</td>
+      <td data-column="">{{contest.participants.length}}</td>
     </tr>
   </tbody>
 </table>
@@ -106,26 +82,34 @@ export default({
               lat:0,
               lng:0
           },
-          printaddr:""
+          printaddr:"",
+          contests:{},
+          name:""
        }
    },
    created()
     {
+      console.log(this.$store.state.user);
+      this.name=this.$store.state.user.name;
+      console.log(this.$store.state.user.contests);
+   this.contests=this.$store.state.user.contests;
        this.$getLocation({})
        .then(coordinates=>{
 // Applied to Dogbert's answer:
 
 this.coordinates=coordinates;
 var a="https://maps.googleapis.com/maps/api/geocode/json?latlng="+this.coordinates.lat+","+this.coordinates.lng+"&key=AIzaSyAV2sha6Y8hlAOAVLcWNG4lwD7lajGonrg";
-        console.log(a);
+        // console.log(a);
               Vue.axios.get(a).then((response) => {
-  console.log(response.data.results[1].formatted_address);
+  // console.log(response.data.results[1].formatted_address);
   this.printaddr=response.data.results[1].formatted_address;
 
 });
 console.log(this.coordinates);
        })
        .catch(error=>alert(error));
+
+       
     }
 
 })
@@ -167,7 +151,7 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .dashboard-container{
-    background-color:#ced2d8;
+    background-color:#f3f3f3;
     height:93vh;
     width:100vw;
 }

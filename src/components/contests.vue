@@ -1,12 +1,13 @@
 <template>
 <b-tabs content-class="mt-3" class="my-tabs">
-    <b-tab title="Explore" active>
+    <b-tab title="Registered Contests" active>
       <div class="contests-container scrollbar" id="style-3">
     <b-container>
         <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col>
+            <b-col v-for="contest in contests" :key="contest._id">
+              <!-- <p>{{contest.start_time}}{{contest.end_time}}{{contest.participants.length}}</p> -->
                  <b-card
-    title="Card Title"
+    :title=contest.name
     img-src="https://picsum.photos/600/300/?image=25"
     img-alt="Image"
     img-top
@@ -14,340 +15,26 @@
     style="max-width: 20rem;"
     class="mb-2">
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+       Start Time :{{contest.start_time}}<br/>
+       End Time :{{contest.end_time}}<br/>
+       No of participants :{{contest.participants.length}}
+
     </b-card-text>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+    <b-button href="#" variant="primary">See more info</b-button>
   </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-         
-        </b-row>
-        <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-         
-        </b-row>
-        <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-         
-        </b-row>
-        <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-         
-        </b-row>
-        <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-            <b-col>
-                 <b-card
-    title="Card Title"
-    img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2">
-    <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
-  </b-card>
-            </b-col>
-         
+            </b-col>        
         </b-row>
     </b-container>
    
 </div>
     </b-tab>
-    <b-tab title="Running">
+    <b-tab title="Running" @click="getrunning">
       <b-container>
          <b-row>
-        <b-col>
+        <b-col v-for="run in runningcontests" :key="run._id">
           <b-card
-    title="Card Title"
+    :title=run.name
     img-src="https://picsum.photos/600/300/?image=25"
     img-alt="Image"
     img-top
@@ -356,7 +43,8 @@
     class="mb-2"
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+      Start time: {{runningcontests.start_time}}<br/>
+      End time: {{runningcontests.end_time}}
     </b-card-text>
 
     <router-link to="./running" class="start-link">Start Solving</router-link>
@@ -375,8 +63,32 @@
 export default({
  components:{
  },
+ data(){
+   return{
+     contests:{
+
+     },
+     runningcontests:{
+
+     }
+   }
+ },
+ methods:{
+  getrunning(){
+    for (var index = 0; index < this.contests.length; index++) { 
+      var mydate=new Date(this.contests[index].start_time);
+      const nowdate=new Date();
+      if(nowdate.getTime()>=mydate.getTime)
+      this.runningcontests.push(this.contests[index]);
+    //   console.log(mydate.getTime());
+    //   console.log(nowdate.getTime());
+    // console.log(this.contests[index].start_time); 
+} 
+  }
+ },
   created(){
-   console.log(this.$store.state.user.contests)
+   console.log(this.$store.state.user.contests);
+   this.contests=this.$store.state.user.contests;
  }
 })
 </script>
