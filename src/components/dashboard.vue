@@ -7,7 +7,7 @@
   <div class="overlay">
     <div class = "items"></div>
     <div class = "items head">
-      <p>HEY {{name}}</p>
+      <p>HEY {{$store.state.user.name}}</p>
       <hr>
     </div>
     <div class = "items price">
