@@ -37,8 +37,19 @@ Router.post('/submit',async (req,res)=>{
                 const accepted = resp2.data.trim() === output
                 const elem = 100/(contest.questions.length-1)
                 if(accepted){
-                   
-                        participant.next_location = participant.curr_location.next_location._id
+                        var final ;
+                        if(question.diff === 0){
+                            final = Math.min(contest.locations.lenth-1,participant.curr_idx+1)
+                        }
+                        else if(question.diff == 1){
+                            final = Math.min(contest.locations.lenth-1,participant.curr_idx+2)
+                        }
+                        else{
+                            final = Math.min(contest.locations.lenth-1,participant.curr_idx+3)
+                        }
+                        participant.curr_idx = final
+                        participant.next_location = contest.questions[final]
+                      
                         await participant.save()
                 }
                 res.send({result: resp.data,accepted:resp2.data})

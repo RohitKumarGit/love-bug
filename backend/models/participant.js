@@ -6,6 +6,10 @@ const id = Schema.Types.ObjectId
 const participantSchema = new Schema({
     name:String,
     email:String,
+    curr_idx:{
+        type:Number,
+        defaul:0
+    },
     uid:String,
     shortid:{
         type:String,
