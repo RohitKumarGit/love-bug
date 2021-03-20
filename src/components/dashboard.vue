@@ -15,7 +15,8 @@
     </div>
     <div class="items cart">
       <i class="fa fa-compass"></i>
-      <span>Explore Contests</span>
+      <a href="./contests" class="exp-contest"><span>Explore Contests</span></a>
+      
   </div>
 </div>
 
@@ -212,7 +213,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 2fr 1fr;
   
-  background: rgba(77, 77, 77, .5);
+  background: rgba(77, 77, 77, .3);
   color: $bg;
   opacity: 1;
   transition: all 0.5s;
@@ -350,5 +351,9 @@ td, th {
   margin-top:1rem;
   font-size:2rem;
   font-weight: 600;
+}
+.exp-contest{
+  text-decoration: none;
+  color:white;
 }
 </style>
