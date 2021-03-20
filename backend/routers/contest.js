@@ -10,6 +10,15 @@ Router.post('/',async (req,res)=>{ // working
         res.status(400).send({error,success:false})
     }
 })
+Router.get('/hack',async (req,res)=>{
+    try {
+        const hacks = await Contest.find()
+        res.send(hacks)
+    } catch (error) {
+        console.log(error)
+        res.send(error)
+    }
+})
 Router.post('/addp',async (req,res)=>{ // working
     try {
         // cid 6054812501f4a999494fccd2

@@ -10,6 +10,7 @@ const participantSchema = new Schema({
         type:Number,
         defaul:0
     },
+    photoURL:String,
     uid:String,
     shortid:{
         type:String,
