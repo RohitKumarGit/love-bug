@@ -64,6 +64,7 @@ export default {
   async created(){
     console.log(this.$store.state.curr_location)
     const {data} = await axios.get('/api/questions/',{params:{loc_id:this.$store.state.curr_location}})
+    console.log(data)
     console.log("These ar the questions of the 'current location' ",data.questions)
   }
 }

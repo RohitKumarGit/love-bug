@@ -16,7 +16,7 @@ const routes=[
        component:Dashboard
     },
     {
-        path:'/ide/:id',
+        path:'/ide',
         component:IDE
     },
     {
