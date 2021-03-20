@@ -17,6 +17,7 @@ app.use(history({
   disableDotRule:false
 }));
 app.use('/', express.static(path.join(__dirname, '../dist')));
+console.log("pass")
 app.use('/api/contests',contestRouter)
 app.use('/api/locations',locationRouter)
 app.use('/api/participants',participantRouter)
