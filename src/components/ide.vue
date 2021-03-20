@@ -10,11 +10,12 @@
     </select>
     </div>
      
-    <iframe src="https://www.jdoodle.com/embed/v0/36IZ?rw=1&arg=0" v-show="selected==='cpp'" id="cpp" class="iframe-div"></iframe>
-    <iframe src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java" class="iframe-div"></iframe>
-    <iframe src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python" class="iframe-div"></iframe>
+    <div data-pym-src="https://www.jdoodle.com/embed/v0/36IZ?rw=1&arg=0" v-show="selected==='cpp'" id="cpp"></div>
+    <div data-pym-src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java"></div>
+    <div data-pym-src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python"></div>
+    <b-form-file v-model="file2" class="file mt-3" plain></b-form-file>
+    <div class="filename mt-3">Selected file: {{ file2 ? file2.name : '' }}</div>
     </div>
-    <a href="#">Submit</a>
  
 </div>
    
@@ -25,7 +26,8 @@ export default {
   name:"ide",
     data(){
         return {
-        selected:""
+        selected:"",
+        file2:null
         }
     },
   updated() {
@@ -39,11 +41,6 @@ export default {
 
     //  document.querySelector("#app > div > div > div > div.embed-brand-area.level").innerText="";
     });
-  },
-  mounted(){
-         var frameobj=document.getElementById("#cpp");
-     var frameContent= frameobj.contentWindow.document.body.innerHTML;
-      alert(frameContent);
   }
 }
 </script>
@@ -68,14 +65,11 @@ export default {
 {
   margin:0 auto;
   max-height: 36rem;
-  max-width: 50rem;
+  max-width: 52rem;
 	background: #F5F5F5;
 	overflow-y: scroll;
   margin-top: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.iframe-div{
-  height:80vh;
-  width:100%;
-}
+
 </style>

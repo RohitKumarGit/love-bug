@@ -1,9 +1,11 @@
-
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dashboard from'../components/dashboard.vue'
-import login from'../components/login.vue'
-import ide from'../components/ide.vue'
+import basicapi from'../components/basicapi.vue'
+import contests from'../components/contests.vue'
+import matches from'../components/matches.vue'
+import practice from'../components/practice.vue'
+import IDE from'../components/ide.vue'
 
 Vue.use(VueRouter);
 
@@ -13,13 +15,25 @@ const routes=[
        component:Dashboard
     },
     {
-        path:'/login',
-        component:login
-     },
-     {
-         path:'/ide',
-         component:ide
-      }
+        path:'/ide',
+        component:IDE
+    },
+    {
+        path:'/contests',
+        component:contests
+    },
+    {
+        path:'/running',
+        component:basicapi
+    },
+    {
+        path:'/matches',
+        component:matches
+    },
+    {
+        path:'/practice',
+        component:practice
+    }
 ];
 
 const router = new VueRouter({
