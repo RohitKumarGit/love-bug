@@ -6,7 +6,7 @@
 						<img src="https://www.myclickmagazine.com/wp-content/uploads/2016/12/black-and-white-photo-of-couple-laughing-by-Sonia-Bourdon.jpg" alt="img19"/>
 						<figcaption>
 							<h2>&lt;LOVE <span>BUG/&gt;</span></h2>
-              <h5>WHERE CODING MEETS LOVE</h5>
+              <h5>WHERE CODE MEETS LOVE</h5>
 							<p><b-button variant="primary" class="login-button" @click="login">LOGIN</b-button></p>
 						</figcaption>			
 					</figure>

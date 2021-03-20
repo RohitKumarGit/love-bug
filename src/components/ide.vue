@@ -16,8 +16,7 @@
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java"></div>
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python"></div>
     
-
-  <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')" variant="primary">Submit</b-button>
+  <b-button v-if="$route.fullPath!='/ide'" id="show-btn" @click="$bvModal.show('bv-modal-example')" variant="primary">Submit</b-button>
 
   <b-modal id="bv-modal-example" hide-footer>
     <template #modal-title>
