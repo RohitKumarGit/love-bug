@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dashboard from'../components/dashboard.vue'
-import basicapi from'../components/basicapi.vue'
+import running from'../components/running.vue'
 import contests from'../components/contests.vue'
 import matches from'../components/matches.vue'
 import practice from'../components/practice.vue'
@@ -25,7 +25,7 @@ const routes=[
     },
     {
         path:'/running',
-        component:basicapi
+        component:running
     },
     {
         path:'/matches',

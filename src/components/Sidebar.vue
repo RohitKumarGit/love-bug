@@ -40,12 +40,12 @@
       </div> -->
        <img src="../assets/people.jpg" alt="" class="my-photo">
         <h4>Hello Mayank!</h4>
-        <div class="side-links d-flex"><a href="./" class="link">&nbsp;&nbsp;Dashboard</a><span><i class="fas fa-tachometer-alt"></i></span></div>
-        <div class="side-links d-flex"><a href="./contests" class="link">&nbsp;&nbsp;Contests</a><span><i class="fas fa-compass"></i></span></div>
-        <div class="side-links d-flex"><a href="./matches" class="link">&nbsp;&nbsp;Matches</a><span>&nbsp;<i class="fas fa-people-arrows"></i></span></div>
-        <div class="side-links d-flex"><a href="./practice" class="link">&nbsp;&nbsp;Practice</a><span>&nbsp;<i class="fas fa-pencil-ruler"></i></span></div>
-        <div class="side-links d-flex"><a href="./ide" class="link">&nbsp;&nbsp;IDE</a><span>&nbsp;<i class="fas fa-stroopwafel"></i></span></div>
-      <div class="side-links d-flex"><a href="./help" class="link">&nbsp;&nbsp;Help and Support</a><span>&nbsp;<i class="fas fa-question-circle"></i></span></div> 
+        <div class="side-links d-flex"><router-link to="./" class="link">&nbsp;&nbsp;Dashboard</router-link><span><i class="fas fa-tachometer-alt"></i></span></div>
+        <div class="side-links d-flex"><router-link to="./contests" class="link">&nbsp;&nbsp;Contests</router-link><span><i class="fas fa-compass"></i></span></div>
+        <div class="side-links d-flex"><router-link to="./matches" class="link">&nbsp;&nbsp;Matches</router-link><span>&nbsp;<i class="fas fa-people-arrows"></i></span></div>
+        <div class="side-links d-flex"><router-link to="./practice" class="link">&nbsp;&nbsp;Practice</router-link><span>&nbsp;<i class="fas fa-pencil-ruler"></i></span></div>
+        <div class="side-links d-flex"><router-link to="./ide" class="link">&nbsp;&nbsp;IDE</router-link><span>&nbsp;<i class="fas fa-stroopwafel"></i></span></div>
+      <div class="side-links d-flex"><router-link to="./help" class="link">&nbsp;&nbsp;Help and Support</router-link><span>&nbsp;<i class="fas fa-question-circle"></i></span></div> 
     </b-sidebar>
   </div>
 </template>
@@ -159,11 +159,6 @@ h4{
         cursor: pointer;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-     &__checkbox:checked ~ &__button {
-        transform: translateX(20rem);
-        transition:all 0.6s;
-    }
-
 }
 .top-header{
   height:3rem;

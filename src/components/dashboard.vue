@@ -1,7 +1,7 @@
 <template>
 <div class="dashboard-container">
     <b-container>
- <b-row>
+ <b-row cols="1" cols-sm="1" cols-md="2" cols-lg="2">
         <b-col>
             <div class="card-container">
   <div class="overlay">
@@ -135,10 +135,7 @@ console.log(this.coordinates);
   
 .about{
     color:white;
-    height:18rem;
-    width:10rem;
     background-color:white;
-    margin:1rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background: #76b852;  /* fallback for old browsers */
@@ -151,10 +148,9 @@ font-weight:bold;
 .live-location{
     color:white;
     font-family: "Verdana", "Courier New", monospace;
-    height:18rem;
-    width:10rem;
     background-color:white;
-    margin:1rem;
+    margin-top:1rem;
+    max-width: 35rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 background: #f2709c;  /* fallback for old browsers */

@@ -343,18 +343,37 @@
 </div>
     </b-tab>
     <b-tab title="Running">
-      <basicapi/>
+      <b-container>
+         <b-row>
+        <b-col>
+          <b-card
+    title="Card Title"
+    img-src="https://picsum.photos/600/300/?image=25"
+    img-alt="Image"
+    img-top
+    tag="article"
+    style="max-width: 20rem;"
+    class="mb-2"
+  >
+    <b-card-text>
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </b-card-text>
+
+    <router-link to="./running" class="start-link">Start Solving</router-link>
+  </b-card>
+        </b-col>
+      </b-row>
+      </b-container>
+         
     </b-tab>
   </b-tabs>
 
     
 </template>
 <script>
-import basicapi from './basicapi.vue'
 
 export default({
  components:{
-   basicapi
  }
 })
 </script>
@@ -391,5 +410,8 @@ export default({
 }
 .my-tabs{
   overflow:hidden;
+}
+.start-link{
+  text-decoration: none;
 }
 </style>
