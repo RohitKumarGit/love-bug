@@ -84,7 +84,7 @@ export default({
           },
           printaddr:"",
           contests:{},
-          name:""
+          name:"",
        }
    },
    created()

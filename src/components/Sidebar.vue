@@ -37,7 +37,7 @@
           <b-form-select id="backdrop-variant" v-model="variant" :options="variants"></b-form-select>
         </b-form-group>
       </div> -->
-       <img src="../assets/people.jpg" alt="" class="my-photo">
+       <img :src=photoURL alt="" class="my-photo">
         <h4>Hello {{name}}!</h4>
         <div class="side-links d-flex"><router-link to="./dashboard" class="link">&nbsp;&nbsp;Dashboard</router-link><span><i class="fas fa-tachometer-alt"></i></span></div>
         <div class="side-links d-flex"><router-link to="./contests" class="link">&nbsp;&nbsp;Contests</router-link><span><i class="fas fa-compass"></i></span></div>
@@ -71,12 +71,14 @@ import firebase from 'firebase'
           lat:0,
           lng:0
         },
-        name:""
+        name:"",
+        photo:""
       }
     },
     created()
     {
       this.name=this.$store.state.user.name;
+      this.photo=this.$store.state.user.photoURL;
        this.$getLocation({})
        .then(coordinates=>{
 // Applied to Dogbert's answer:
