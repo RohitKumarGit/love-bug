@@ -5,28 +5,17 @@
   </div>
 </template>
 <script>
-import sidebar from './components/Sidebar.vue';
-
-import Vue from 'vue';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-Vue.use(VueAxios,axios);
-
-
+import sidebar from './components/Sidebar.vue'
+import axios from 'axios'
 export default({
  components:{
    sidebar
  },
- created(){
-   if(localStorage.getItem("user")===null)
-   {
-        Vue.axios.post('api/participants',{uid:'1233'})
-        .then((resp)=>{
-          console.log(resp.data);
-            localStorage.setItem('user',resp.data.participants);
-        });
-   }
- }
+ async created(){
+    const {data} = await axios.post('/api/participants',{uid:"1233"})
+
+    this.$store.commit("adduser",data.participant)
+  }
 })
 </script>
 

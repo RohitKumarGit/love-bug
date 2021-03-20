@@ -8,12 +8,15 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import VueGeolocation from 'vue-browser-geolocation';
 
+
 Vue.use(VueGeolocation);
 
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 
 import * as VueGoogleMaps from'vue2-google-maps';
+
+import store from './store'
 Vue.use(VueRouter);
 Vue.use(VueGoogleMaps, {
   load: {
@@ -31,5 +34,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App),
+  store,
+  render: h => h(App)
 }).$mount('#app')

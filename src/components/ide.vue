@@ -1,7 +1,9 @@
 <template>
 <div class="my-ide">
+
        <div class="scrollbar" id="style-3">
    <div class="my">
+   <b-button
         <label for="lang">Choose language : </label>
         <select name="" id="lang" v-model="selected" required>
         <option value="cpp" selected>C++</option>
@@ -34,6 +36,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex' // imp
 export default {
   name:"ide",
     data(){
@@ -50,9 +53,15 @@ export default {
       let tag = document.createElement("script");
       tag.setAttribute("src", script);
       document.head.appendChild(tag);
-
+  
     //  document.querySelector("#app > div > div > div > div.embed-brand-area.level").innerText="";
     });
+  },
+  computed:{
+    ...mapState(['user']) // imp
+  },
+  created(){
+    console.log(this.user)
   }
 }
 </script>

@@ -242,3 +242,15 @@
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 </style>
+<script>
+import {mapState} from 'vuex'
+//import axios from 'axios'
+export default {
+   created(){
+    console.log("matches array :",this.user.matches)
+  },
+  computed:{
+    ...mapState(["user"])
+  }
+}
+</script>
