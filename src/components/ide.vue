@@ -13,8 +13,20 @@
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36IZ?rw=1&arg=0" v-show="selected==='cpp'" id="cpp"></div>
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java"></div>
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python"></div>
-    <b-form-file v-model="file2" class="file mt-3" plain></b-form-file>
-    <div class="filename mt-3">Selected file: {{ file2 ? file2.name : '' }}</div>
+    
+      <b-button v-b-modal.modal-1 variant="primary">Submit</b-button>
+
+  <b-modal id="modal-1" title="Paste your code here" variant="primary">
+    <b-form-textarea
+      id="textarea"
+      v-model="file"
+      placeholder="Enter your code here"
+      rows="3"
+      max-rows="6"
+    ></b-form-textarea>
+  </b-modal>
+
+    <!-- <p>{{selected}} {{file}}</p> -->
     </div>
  
 </div>
@@ -27,7 +39,7 @@ export default {
     data(){
         return {
         selected:"",
-        file2:null
+        file:""
         }
     },
   updated() {

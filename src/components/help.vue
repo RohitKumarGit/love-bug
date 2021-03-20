@@ -1,8 +1,8 @@
 <template>
     <div>
        <label for="">Enter your email:</label>&nbsp;<input type="text" placeholder="Enter your email" class="email"><br/><br/><br/>
-       <label for="">Enter your grievance :</label>&nbsp;<textarea name="" id="grievances" cols="30" rows="5"></textarea>
-       <br/><b-button>Submit</b-button>
+       <label for="">Enter your grievance :</label>&nbsp;<textarea placeholder="Grievances" name="Grievances" id="grievances" cols="30" rows="5"></textarea>
+       <br/><b-button variant="primary">Submit</b-button>
     </div>
 </template>
 <style scoped>
