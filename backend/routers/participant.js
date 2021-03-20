@@ -4,17 +4,19 @@ const Participant = require('../models/participant')
 const Contest = require('../models/contest')
 Router.post("/",async (req,res)=>{ // working
     try {
-        console.log(req.body.data)
+        
         const participant = await Participant.find({uid:req.body.uid}).populate("contests matches")
         
         console.log(participant.length)
-        if(participant.length){
+        if(participant.length >= 1){
+            console.log("not new")
             res.send({isNew:false,participant:participant[0]})
         }
         else {
             req.body.data.uid = req.body.uid
             req.body.data.name = req.body.data.displayName
             const newp = await Participant.create(req.body.data)
+            console.log("created")
             // data : name , uid , email
             res.send({isNew:true,newp})
         }

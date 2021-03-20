@@ -22,6 +22,7 @@ Router.get('/hack',async (req,res)=>{
 Router.post('/addp',async (req,res)=>{ // working
     try {
         // cid 6054812501f4a999494fccd2
+        console.log(req.body)
         const contest = await Contest.findById(req.body.cid)
         const pt = await Participant.findOne({email:req.body.email})
         pt.next_location = contest.locations[0]
