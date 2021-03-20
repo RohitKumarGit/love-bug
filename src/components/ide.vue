@@ -3,7 +3,7 @@
 
        <div class="scrollbar" id="style-3">
    <div class="my">
-   <b-button
+ 
         <label for="lang">Choose language : </label>
         <select name="" id="lang" v-model="selected" required>
         <option value="cpp" selected>C++</option>

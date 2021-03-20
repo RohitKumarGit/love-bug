@@ -40,6 +40,7 @@
 // import VueAxios from 'vue-axios';
 // Vue.use(VueAxios,axios);
 import ide from"@/components/ide.vue"
+import axios from 'axios'
 export default({
     name:"running",
     data(){
@@ -60,7 +61,17 @@ export default({
           this.text=messagetoSend;
           this.toggle=true;
       },
-      verifyadd(){
+      async verifyadd(){
+          // verifying address
+            const {data} = await axios.post('/api/participants/verify',{id:this.$store.state.user._id})
+            console.log(data)
+            if(data.verified){
+                this.$store.commit("adduser",data.participant)
+                console.log("verified")
+            }
+            else {
+                console.log("not verified")
+            }
           this.verifyaddress=true;
           this.verifyshow=false;
       }

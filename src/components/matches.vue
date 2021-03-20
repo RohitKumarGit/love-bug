@@ -243,14 +243,15 @@
 }
 </style>
 <script>
-import {mapState} from 'vuex'
+
 //import axios from 'axios'
 export default {
    created(){
-    console.log("matches array :",this.user.matches)
+   //  const matches = this.$store.state.user
+    console.log("matches array :",this.$store.state.user.matches)
   },
   computed:{
-    ...mapState(["user"])
+  
   }
 }
 </script>

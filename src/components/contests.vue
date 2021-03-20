@@ -374,6 +374,9 @@
 
 export default({
  components:{
+ },
+  created(){
+   console.log(this.$store.state.user.contests)
  }
 })
 </script>
