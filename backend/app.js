@@ -11,6 +11,12 @@ const contestRouter = require('./routers/contest')
 const locationRouter = require('./routers/location')
 const participantRouter = require('./routers/participant')
 const questionRouter = require('./routers/questions')
+const history = require('connect-history-api-fallback')
+app.use(history({
+  verbose: false,
+  disableDotRule:false
+}));
+app.use('/', express.static(path.join(__dirname, '../dist')));
 app.use('/api/contests',contestRouter)
 app.use('/api/locations',locationRouter)
 app.use('/api/participants',participantRouter)
@@ -27,8 +33,8 @@ mongoose.connect(uri, {
   })
 
 
-app.listen(8085, function (err) {
+app.listen(process.env.PORT || 8085, function (err) {
     if (!err) {
-      console.log("server is running at ")
+      console.log("server is running  ")
     }
   })

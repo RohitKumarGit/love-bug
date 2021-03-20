@@ -4,7 +4,7 @@
       <div class="contests-container scrollbar" id="style-3">
     <b-container>
         <b-row class="contests-row" cols="1" cols-sm="1" cols-md="2" cols-lg="4" align-h="center">
-            <b-col v-for="contest in contests" :key="contest._id">
+            <b-col v-for="contest in $store.state.user.contests" :key="contest._id">
               <!-- <p>{{contest.start_time}}{{contest.end_time}}{{contest.participants.length}}</p> -->
                  <b-card
     :title=contest.name
@@ -75,11 +75,11 @@ export default({
  },
  methods:{
   getrunning(){
-    for (var index = 0; index < this.contests.length; index++) { 
-      var mydate=new Date(this.contests[index].start_time);
+    for (var index = 0; index < this.$store.state.user.contests.length; index++) { 
+      var mydate=new Date(this.$store.state.user.contests[index].start_time);
       const nowdate=new Date();
       if(nowdate.getTime()>=mydate.getTime)
-      this.runningcontests.push(this.contests[index]);
+      this.runningcontests.push(this.$store.state.user.contests[index]);
     //   console.log(mydate.getTime());
     //   console.log(nowdate.getTime());
     // console.log(this.contests[index].start_time); 
