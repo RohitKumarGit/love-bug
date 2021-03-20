@@ -5,7 +5,7 @@ const parser = require('body-parser')
 app.use(parser.json())
 var morgan = require('morgan')
 const path = require('path')
-const uri = "mongodb+srv://user:uvOyX5UA6I2mjplk@cluster0.azmit.mongodb.net/lms2?retryWrites=true&w=majority"
+const uri = "mongodb+srv://user:uvOyX5UA6I2mjplk@cluster0.azmit.mongodb.net/lms3?retryWrites=true&w=majority"
 app.use(morgan('tiny'))
 const contestRouter = require('./routers/contest')
 const locationRouter = require('./routers/location')

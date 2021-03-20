@@ -6,6 +6,7 @@ Router.post("/",async (req,res)=>{ // working
     try {
         console.log(req.body.data)
         const participant = await Participant.find({uid:req.body.uid}).populate("contests matches")
+        
         console.log(participant.length)
         if(participant.length){
             res.send({isNew:false,participant:participant[0]})
