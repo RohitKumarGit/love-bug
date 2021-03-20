@@ -50,9 +50,7 @@ firebase.auth().onAuthStateChanged(async function(user) {
     const {data} = await axios.post('/api/participants',{uid:user.uid,data:user})
     console.log(data)
     store.commit("adduser",data.participant)
-    if(window.location.pathname != '/dashboard'){
-      window.location = '/dashboard'
-    }
+    
     
   }
 });

@@ -37,8 +37,8 @@
           <b-form-select id="backdrop-variant" v-model="variant" :options="variants"></b-form-select>
         </b-form-group>
       </div> -->
-       <img :src=photoURL alt="" class="my-photo">
-        <h4>Hello {{name}}!</h4>
+       <img :src=$store.state.user.photoURL alt="" class="my-photo">
+        <h4>Hello {{$store.state.user.name}}!</h4>
         <div class="side-links d-flex"><router-link to="./dashboard" class="link">&nbsp;&nbsp;Dashboard</router-link><span><i class="fas fa-tachometer-alt"></i></span></div>
         <div class="side-links d-flex"><router-link to="./contests" class="link">&nbsp;&nbsp;Contests</router-link><span><i class="fas fa-compass"></i></span></div>
         <div class="side-links d-flex"><router-link to="./matches" class="link">&nbsp;&nbsp;Matches</router-link><span>&nbsp;<i class="fas fa-people-arrows"></i></span></div>
