@@ -2,14 +2,27 @@
     <div class="login-container">
       <div class="login-div">
           <img src="../assets/login.jpg" alt="" class="my-photo">
+          <b-button variant="primary" @click="login">LOGIN</b-button>
            <!-- <a href="#" class="testbutton"><i class="fab fa-google"></i>&nbsp;&nbsp;&nbsp;Sign-in with Google</a> -->
       </div>
      
     </div>
 </template>
+
 <script>
+import firebase from 'firebase'
+import axios from 'axios'
 export default({
-  name:"login"
+  name:"login",
+  methods: {
+    async login(){
+        var provider = new firebase.auth.GoogleAuthProvider()
+        const {user} =await  firebase.auth().signInWithPopup(provider)
+        const {data} = await axios.post('/api/participants',{uid:user.uid,data:user})
+        console.log(data)
+        this.$store.commit("adduser",data.participant)
+    }
+  },
 })
 </script>
 

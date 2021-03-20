@@ -6,16 +6,11 @@
 </template>
 <script>
 import sidebar from './components/Sidebar.vue'
-import axios from 'axios'
+//import axios from 'axios'
 export default({
  components:{
    sidebar
- },
- async created(){
-    const {data} = await axios.post('/api/participants',{uid:"1233"})
-
-    this.$store.commit("adduser",data.participant)
-  }
+ }
 })
 </script>
 

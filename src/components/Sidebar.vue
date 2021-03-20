@@ -14,7 +14,7 @@
       <i class="fas fa-user"></i>
     </template>
     <b-dropdown-item href="#">Edit profile</b-dropdown-item>
-    <b-dropdown-item href="#">Logout</b-dropdown-item>
+    <b-dropdown-item href="#" @click="logout">Logout</b-dropdown-item>
   </b-dropdown>
   
         </div>
@@ -49,6 +49,7 @@
   </div>
 </template>
 <script>
+import firebase from 'firebase'
   export default {
     name:"Sidebar",
     data() {
@@ -86,7 +87,12 @@ this.coordinates.lat=truncateda;
 this.coordinates.lng=truncatedb;
        })
        .catch(error=>alert(error));
-    }
+    },
+    methods: {
+      async logout(){
+        await firebase.auth().signOut()
+      }
+    },
   }
 </script>
 <style scoped lang="scss">

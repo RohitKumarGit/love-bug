@@ -7,7 +7,7 @@ import matches from'../components/matches.vue'
 import practice from'../components/practice.vue'
 import IDE from'../components/ide.vue'
 import help from'../components/help.vue'
-
+import login from '@/components/login'
 Vue.use(VueRouter);
 
 const routes=[
@@ -38,6 +38,10 @@ const routes=[
     {
         path:'/help',
         component:help
+    },{
+        path:'/login',
+        component:login,
+        name:"login"
     }
 
 ];
