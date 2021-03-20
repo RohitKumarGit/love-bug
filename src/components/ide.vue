@@ -16,16 +16,23 @@
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JE?rw=1&arg=0" v-show="selected==='java'" id="java"></div>
     <div data-pym-src="https://www.jdoodle.com/embed/v0/36JF?rw=1&arg=0" v-show="selected==='python'" id="python"></div>
     
-      <b-button v-b-modal.modal-1 variant="primary">Submit</b-button>
 
-  <b-modal id="modal-1" title="Paste your code here" variant="primary">
-    <b-form-textarea
+  <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')" variant="primary">Submit</b-button>
+
+  <b-modal id="bv-modal-example" hide-footer>
+    <template #modal-title>
+      Paste your <code>code</code> here
+    </template>
+    <div class="d-block text-center">
+     <b-form-textarea
       id="textarea"
       v-model="file"
-      placeholder="Enter your code here"
+      placeholder="Enter something..."
       rows="3"
       max-rows="6"
     ></b-form-textarea>
+    </div>
+    <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example');submitwait();">OK</b-button>
   </b-modal>
 
     <!-- <p>{{selected}} {{file}}</p> -->
@@ -44,6 +51,12 @@ export default {
         selected:"",
         file:""
         }
+    },
+    methods:
+    {
+     submitwait() {
+    setTimeout(() => alert("Congratulations ! Your code is Accepted"), 3000);
+  }
     },
   updated() {
     var scripts = [

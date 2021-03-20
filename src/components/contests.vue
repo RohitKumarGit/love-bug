@@ -32,7 +32,7 @@
     <b-tab title="Running" @click="getrunning">
       <b-container>
          <b-row>
-        <b-col v-for="run in runningcontests" :key="run._id">
+        <b-col v-for="(run,index) in runningcontests" :key="run._id">
           <b-card
     :title=run.name
     img-src="https://picsum.photos/600/300/?image=25"
@@ -43,8 +43,8 @@
     class="mb-2"
   >
     <b-card-text>
-      Start time: {{runningcontests.start_time}}<br/>
-      End time: {{runningcontests.end_time}}
+      Start time: {{runningcontests[index].start_time}}<br/>
+      End time: {{runningcontests[index].end_time}}
     </b-card-text>
 
     <router-link to="./running" class="start-link">Start Solving</router-link>
@@ -68,18 +68,22 @@ export default({
      contests:{
 
      },
-     runningcontests:{
-
-     }
+     runningcontests:[]
    }
  },
  methods:{
   getrunning(){
-    for (var index = 0; index < this.$store.state.user.contests.length; index++) { 
-      var mydate=new Date(this.$store.state.user.contests[index].start_time);
+    this.runningcontests.length=0;
+    for (var index = 0; index < this.contests.length; index++) { 
+      var mydate=new Date(this.contests[index].start_time);
+      console.log(mydate.getTime());
       const nowdate=new Date();
-      if(nowdate.getTime()>=mydate.getTime)
-      this.runningcontests.push(this.$store.state.user.contests[index]);
+      console.log(nowdate.getTime());
+      if(nowdate.getTime()>=mydate.getTime()){
+         this.runningcontests.push(this.contests[index]);
+
+      }
+     
     //   console.log(mydate.getTime());
     //   console.log(nowdate.getTime());
     // console.log(this.contests[index].start_time); 
