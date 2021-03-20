@@ -19,7 +19,7 @@ Router.post('/',async (req,res)=>{ // done
 })
 Router.get('/',async (req,res)=>{ // done
     try {
-        const questions = await Location.findById(req.body.loc_id).populate("questions")
+        const questions = await Location.findById(req.query.loc_id).populate("questions")
         res.send(questions)
     } catch (error) {
         console.log(error)

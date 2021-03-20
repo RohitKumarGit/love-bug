@@ -66,6 +66,7 @@ export default({
             const {data} = await axios.post('/api/participants/verify',{id:this.$store.state.user._id})
             console.log(data)
             if(data.verified){
+                
                 this.$store.commit("adduser",data.participant)
                 console.log("verified")
             }

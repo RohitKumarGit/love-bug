@@ -37,6 +37,7 @@
 
 <script>
 import {mapState} from 'vuex' // imp
+import axios from 'axios'
 export default {
   name:"ide",
     data(){
@@ -60,8 +61,10 @@ export default {
   computed:{
     ...mapState(['user']) // imp
   },
-  created(){
-    console.log(this.user)
+  async created(){
+    console.log(this.$store.state.curr_location)
+    const {data} = await axios.get('/api/questions/',{params:{loc_id:this.$store.state.curr_location}})
+    console.log("These ar the questions of the 'current location' ",data.questions)
   }
 }
 </script>
