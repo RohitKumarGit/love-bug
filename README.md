@@ -68,7 +68,7 @@ npm i
 ```
 
 ```
-npm run starr
+npm run start
 ```
 
 - #### Front End
