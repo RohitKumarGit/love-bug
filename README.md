@@ -1,4 +1,4 @@
-# < LOVE BUG /> S
+# < LOVE BUG />
 
 🔗https://lovebugmain.herokuapp.com/login 
 
